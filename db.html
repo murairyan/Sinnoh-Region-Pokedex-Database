@@ -1,0 +1,175 @@
+<!-- db.html
+    Angelo Neri Alfonso
+    CPSC3300-01
+    Pokemon Sinnoh Pokedex Database
+-->
+
+<html>
+<head><title> Pokemon Sinnoh Pokedex Database </title>
+<meta name = "viewport" content = "width = device-width, initial-scale = 1">
+<style>
+  body{
+    font-family: 'Verdana', sans-serif;
+  }
+  .button {
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 20px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+
+  img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .content {
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      padding: 10px;
+    }
+
+    p {
+      text-align:center
+    }
+
+    h1 {
+      text-align:center
+    }
+
+    h2 {
+      text-align:center
+    }
+
+    form {
+      text-align: center;
+    }
+    .black {background-color:#000000;}
+</style>
+</head>
+<body style="background-color:#AD2128;">
+    
+<p>
+<div class = "content">
+<h1> The Sinnoh Region Pokedex </h1>
+
+
+<p>
+    <img src = "http://css1.seattleu.edu/~murairyan/dbtest/Sinnoh_Starters.png"
+        style = "width: 450; height: 270;" ></a>
+</p> <br/>
+
+<h2> Database Information </h2>
+
+<form name = "f1" action = "http://css1.seattleu.edu/~murairyan/dbtest/tableNames.php"
+    method = "post">
+    <select name = "tName" id = "tName">
+      <option selected disabled> Select Table for Description </option>
+      <option value = "Pokemon"> Pokemon </option>
+      <option value = "PokemonType"> PokemonType </option>
+      <option value = "Ability"> Ability </option>
+      <option value = "Stats"> Stats </option>
+      <option value = "Move"> Move </option>
+      <option value = "CanLearn"> CanLearn </option>
+      <option value = "HasAbility"> HasAbility </option>
+      <option value = "IsType"> IsType </option>
+      <option value = "EvolvesTo"> EvolvesTo </option>
+  </select>
+  <br/> <br/>
+  <input type = "reset"  value = "Reset" />
+  <input type = "submit"  value = "Submit Request" />
+</form>
+
+<form name = "f2" action = "http://css1.seattleu.edu/~murairyan/dbtest/dbButton.php"
+    method = "post">
+    <button name = "query" class = "button black"
+            value = "SELECT *
+                    FROM Pokemon"> View All Pokemon </button>
+</form>
+
+<form name = "f3" action = "http://css1.seattleu.edu/~murairyan/dbtest/dbButton.php"
+    method = "post">
+    <button name = "query" class = "button black"
+            value = "SELECT *
+                    FROM Move"> View All Moves </button>
+</form>
+
+<form name = "f4" action = "http://css1.seattleu.edu/~murairyan/dbtest/dbButton.php"
+    method = "post">
+    <button name = "query" class = "button black"
+            value = "SELECT P.pName AS Pokemon, S.HP, S.Attack, S.Defense, S.SpAtk, S.SpDef, S.Speed
+                    FROM Pokemon P, Stats S
+                    WHERE P.statID = S.statID"> Pokemon & Stats </button>
+</form>
+
+<h2> Display Pokemon by Type </h2>
+
+<form name = "f5" action = "http://css1.seattleu.edu/~murairyan/dbtest/dbType.php"
+    method = "post">
+    <select name = "tName" id = "tName">
+        <option selected disabled> Select Type </option>
+        <option value = "'Normal'"> Normal </option>
+        <option value = "'Fire'"> Fire </option>
+        <option value = "'Water'"> Water </option>
+        <option value = "'Grass'"> Grass </option>
+        <option value = "'Electric'"> Electric </option>
+        <option value = "'Ice'"> Ice </option>
+        <option value = "'Fighting'"> Fighting </option>
+        <option value = "'Poison'"> Poison </option>
+        <option value = "'Ground'"> Ground </option>
+        <option value = "'Flying'"> Flying </option>
+        <option value = "'Psychic'"> Psychic </option>
+        <option value = "'Bug'"> Bug </option>
+        <option value = "'Rock'"> Rock </option>
+        <option value = "'Ghost'"> Ghost </option>
+        <option value = "'Dark'"> Dark </option>
+        <option value = "'Dragon'"> Dragon </option>
+        <option value = "'Steel'"> Steel </option>
+        <option value = "'Fairy'"> Fairy </option>
+    </select>
+    <br/> <br/>
+    <input type = "reset"  value = "Reset" />
+    <input type = "submit"  value = "Submit Request" />
+</form>
+
+<h2> Pokemon Max Stats </h2>
+<form name = "f6" action = action = "http://css1.seattleu.edu/~murairyan/dbtest/dbMax.php"
+method = "post">
+<select name = "tName" id = "tName">
+    <option selected disabled> Select Max Stat </option>
+    <option value = "'Health'"> Health </option>
+    <option value = "'Attack'"> Attack </option>
+    <option value = "'Defense'"> Defense </option>
+    <option value = "'Special Attack'"> Special Attack </option>
+    <option value = "'Special Defense'"> Special Defense </option>
+    <option value = "'Speed'"> Speed </option>
+</select>
+<br/> <br/>
+<input type = "reset"  value = "Reset" />
+<input type = "submit"  value = "Submit Request" />
+</form>
+
+<h2> Assign New Move to Pokemon </h2>
+
+<form name = "f6" action = "http://css1.seattleu.edu/~murairyan/dbtest/dbMoveRegister.php" method = "post">
+       <label for = "PokemonID"> <b> Pokemon ID </b> </label> </br>
+       <input type = "text" placeholder = "ex.) 1" name = "PokemonID" id = "PokemonID" required /> <br />
+       <br/>
+       <label for = "mName"> <b> Move Name </b> </label> </br> 
+       <input type = "text" placeholder = "ex.) 'Razor Leaf' " name = "mName" id = "mName" required /> <br/>
+       <br/>
+       
+       <input type = "reset" value = "Reset" />
+       <input type = "submit" value = "Submit Request" />
+</form>
+
+</br>
+
+</html>
