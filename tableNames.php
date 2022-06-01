@@ -1,6 +1,6 @@
 <!--
 dbType.php
-Angelo Neri Alfonso
+Ryan Murai
 CPSC3300-01
 -->
 
