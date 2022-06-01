@@ -49,16 +49,16 @@ PokemonID INTEGER,
     Height NUMERIC,
     Weight NUMERIC,
     Species VARCHAR(50),
---    pDescription VARCHAR(1000),
---    statID INTEGER,
+--  pDescription VARCHAR(1000),
+--  statID INTEGER,
     PRIMARY KEY (PokemonID)
---    FOREIGN KEY (statID) REFERENCES Stats(statID),
+--  FOREIGN KEY (statID) REFERENCES Stats(statID),
 --  FOREIGN KEY (aName) REFERENCES Ability(aName)
 );
 
 CREATE TABLE PokemonType (
 tName VARCHAR(10),
---    tDescription VARCHAR(100),
+--  tDescription VARCHAR(100),
     PRIMARY KEY (tName)
 );
 
