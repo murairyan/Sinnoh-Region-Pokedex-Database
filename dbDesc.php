@@ -1,5 +1,5 @@
 <!-- dbDesc.php
-    Angelo Alfonso
+    Ryan Murai
     CPSC3300-01
     Pokemon Sinnoh Pokedex
     A PHP script to display descriptions of all tables
